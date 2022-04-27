@@ -1,0 +1,3 @@
+# external libraries should be imported as modules or from a CDN -- it is currently just TileLayer.Grayscale.js
+*
+!.gitignore
