@@ -3,6 +3,7 @@
 /* sidebar with crops list in two languages */
 import {add_sidebar, add_intro_modal, html_legend_alc2, html_legend_cscp} from './crops_ui.js';
 import {gettext} from '../../js/mf_i18n.js';
+import {croplist} from './croplist.js';
 
 /** global namespace */
 window.GLOBALS = {};
@@ -16,11 +17,11 @@ function get_selection(){
     var scenario = $('input[name=scenario]:checked').val();
     var year = $('input[name=year]:checked').val();
     
-    var tiff_filename = year === "current" ?
+    var tiff_filename_old = year === "current" ?
         `${crops_u}_current.tif` :
         `${crops_u}_${year}-${scenario}.tif`;
 
-    var tiff_url = `./data/${crops_u}/${tiff_filename}`;
+    var tiff_url = `./data/old/${crops_u}/${tiff_filename_old}`;
     
     return tiff_url;
 }
@@ -75,7 +76,7 @@ function add_geotiff(_map, _url){
 }
 
 $(document).ready(function() {
-
+    
     /** export Globals -- needed for inline onclick events and for debugging */
     window.GLOBALS = {
         leaflet_map : undefined
@@ -138,7 +139,8 @@ $(document).ready(function() {
     /* sequence matters for click events on map (lastest grabs clicks) */
     boundary.addTo(map);
 
-    var opportunities_layer = add_geotiff(map,'./data/Barley/Barley_2020-high.tif');
+    //var opportunities_layer = add_geotiff(map,'./data/old/Barley/Barley_2020-high.tif');
+    var opportunities_layer = add_geotiff(map,'./data/2020/Barley_2020-high_WGS84_clip_b1.tif');
 
     spinner.show();
     setTimeout(function() {
