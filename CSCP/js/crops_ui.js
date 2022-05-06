@@ -1,23 +1,13 @@
 import {gettext, get_transtext} from '../../js/mf_i18n.js';
+import {croplist_html} from './croplist.js';
 
+//sidebar HTML template
 var html_template=`
           <fieldset id="fieldset_crops">
 	    <label for="crops"><h5>${gettext("Select a crop")}:</h5></label>
-	    <select name="crops" id="crops">
-	      <option value="barley" selected>${gettext("Barley")}</option>
-	      <option value="cabbage">${gettext("Cabbage")}</option>
-	      <option value="hops">${gettext("Hops")}</option>
-	      <option value="kale">${gettext("Kale")}</option>
-	      <option value="leeks">${gettext("Leeks")}</option>
-	      <option value="oats">${gettext("Oats")}</option>
-	      <option value="potatoes">${gettext("Potatoes")}</option>
-	      <option value="rye">${gettext("Rye")}</option>
-	      <option value="wheat">${gettext("Wheat")}</option>
-	      <option value="willow_commercial">${gettext("Willow commercial")}</option>
-	      <option value="willow_environmental">${gettext("Willow environmental")}</option>
-	    </select>
 	    <hr/>
-	  <!-- </fieldset> -->
+          <!-- THIS IS WHERE THE HUGE <SELECT> goes -->  
+          ${croplist_html}
           <!-- <fieldset id="fieldset_scenario"> -->
 	    <p><h5>${gettext("Future greenhouse gas emissions")}:</h5></p>
 	    <input type="radio" id="low" name="scenario" value="low" checked>

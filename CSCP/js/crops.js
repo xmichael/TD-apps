@@ -3,35 +3,22 @@
 /* sidebar with crops list in two languages */
 import {add_sidebar, add_intro_modal, html_legend_alc2, html_legend_cscp} from './crops_ui.js';
 import {gettext} from '../../js/mf_i18n.js';
-import {croplist} from './croplist.js';
+import {croplist, croplist2select, croplist_create_path} from './croplist.js';
 
 /** global namespace */
 window.GLOBALS = {};
 /*********************/
 
 /** Get user selection for crop, scenario, year */
-function get_selection(){
-    var crops = $('#crops').val();
-    var crops_u = crops[0].toUpperCase() + crops.substring(1);
-    
+function get_selection(value){
     var scenario = $('input[name=scenario]:checked').val();
     var year = $('input[name=year]:checked').val();
     
-    var tiff_filename_old = year === "current" ?
-        `${crops_u}_current.tif` :
-        `${crops_u}_${year}-${scenario}.tif`;
-
-    var tiff_url = `./data/old/${crops_u}/${tiff_filename_old}`;
+    var tiff_url = `./data/${year}/${croplist_create_path(value, year, scenario)}`;
     
     return tiff_url;
 }
 
-function CSCP_bind_all_inputs(_map){
-    $("fieldset :input").change(function() {
-        var url = get_selection();
-        add_geotiff(_map,url);
-    });
-}
 
 /** Add a geotiff on map */
 function add_geotiff(_map, _url){
@@ -75,11 +62,23 @@ function add_geotiff(_map, _url){
         });  
 }
 
+function CSCP_bind_all_inputs(_map, _select){
+    $("fieldset :input").change(function() {
+	//omg with 3rd party JS libraries...
+	const selected_crop = _select[0].selectize.getValue();
+	if (selected_crop){
+            var url = get_selection(selected_crop);
+            add_geotiff(_map,url);
+	}
+    });
+}
+
 $(document).ready(function() {
-    
+
     /** export Globals -- needed for inline onclick events and for debugging */
     window.GLOBALS = {
-        leaflet_map : undefined
+        leaflet_map : undefined,
+	select_crops: undefined
     };
 
     var spinner = $('.spinner');
@@ -139,8 +138,8 @@ $(document).ready(function() {
     /* sequence matters for click events on map (lastest grabs clicks) */
     boundary.addTo(map);
 
-    //var opportunities_layer = add_geotiff(map,'./data/old/Barley/Barley_2020-high.tif');
-    var opportunities_layer = add_geotiff(map,'./data/2020/Barley_2020-high_WGS84_clip_b1.tif');
+    //add_geotiff(map,'./data/old/Barley/Barley_2020-high.tif');
+    //add_geotiff(map,'./data/2020/Barley_2020-high_WGS84_clip_b1.tif');
 
     spinner.show();
     setTimeout(function() {
@@ -149,16 +148,23 @@ $(document).ready(function() {
 
     add_sidebar('sidebar');
     add_intro_modal('description_modal');
+
+    //use selectize for sidebar
+    var select_crops = $('#crops').selectize({
+	create: false,
+    });
+    window.GLOBALS.select_crops = select_crops;
+
+    
     /*********************/
 
     // Fit to overlay bounds
     //map.fitBounds([[52.330180936, -3.36476263021], [52.885998209, -4.39698523643]]);
-    CSCP_bind_all_inputs(map);
+    CSCP_bind_all_inputs(map, select_crops);
 
 
     /*********************/
     /****** LEGEND ********/
-
 
     var legend = L.control({
         position: 'bottomright'
@@ -190,6 +196,7 @@ $(document).ready(function() {
     map.on('overlayremove', function(l){
 	    $('#crops_legend').html(html_legend_cscp);
     });
+
 
 });
 
