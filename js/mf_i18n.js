@@ -59,6 +59,10 @@ dod i ben <p/> Cymharwch â&#39;r map Dosbarthiad Tir Amaethyddol
 Rhagfynegol cyfredol sy&#39;n graddio ansawdd tir amaethyddol yn yr
 ardal
 `],
+    "crops_intro_NO_ALC2_html" : [ `Explore how the suitability of Welsh land for growing most common
+crops (see the searchbar on the top-left) is predicted to change in
+the future according to whether <mark>low, medium or high Greenhouse
+Gas emission scenarios</mark> come to pass` , ''],
     "crops_alc_legened_title" : ['Predictive ALC grades', 'Graddau ALC Rhagfynegol'],
     "crops_alc_excellent" : ['Excellent quality agr. land', 'Tir amaeth o ansawdd rhagorol'],
     "crops_alc_very_good" : ['Very good quality agr. land', 'Tir amaeth o ansawdd da iawn'],
