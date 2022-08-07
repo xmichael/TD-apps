@@ -21,7 +21,7 @@ var html_template=`
 	  <!-- <fieldset id="fieldset_year"> -->
 	    <p><h5>${gettext("Year")}:</h5></p>
 	    <input type="radio" id="current" name="year" value="current" checked>
-	    <label for="current">2022</label><br>
+	    <label for="current">2019</label><br>
 	    <input type="radio" id="2020" name="year" value="2020">
 	    <label for="2020">2010-2039</label><br>
 	    <input type="radio" id="2050" name="year" value="2050">
