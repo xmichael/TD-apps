@@ -1,7 +1,6 @@
 'use strict';
 
 import food_data from '../data/site_work_plans.js';
-//import food_data from '../data/food/food.js';
 import {descriptions, keywords, utils} from './swp_ui.js';
 import {get_transtext} from '../../../js/mf_i18n.js';
 
@@ -17,13 +16,13 @@ function add_intro_modal(_id) {
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">${get_transtext('food_intro_title')}</h5>
+              <h5 class="modal-title">${get_transtext('site_work_plans_intro_title')}</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-               ${get_transtext('food_intro_body')}
+               ${get_transtext('site_work_plans_intro_body')}
             </div>
           </div>
        </div>
@@ -60,11 +59,11 @@ function add_histories_markers(_map, _histories, _info){
 
 
     var storeIcon = L.icon({
-	iconUrl: 'data/food/distributor.svg',
+	iconUrl: 'data/distributor.svg',
 	iconSize: [28, 33]
     });
     var foodIcon = L.icon({
-	iconUrl: 'data/food/producer.svg',
+	iconUrl: 'data/producer.svg',
 	iconSize: [28, 33]
     });
 

@@ -46,6 +46,10 @@ var en2cy = {
 
 /* dictionary of snippets of text */
 var transtext = {
+    "site_work_plans_intro_title":['Site Work Plans','Site Work Plans'],
+    "site_work_plans_intro_body":[`<p>The map shows the site work plans (click on icons for detail) for each sponsored site contibuting to 
+Community Growing, Social Farming and Community Composting.</p>`,
+		  `<p></p>`],
     "crops_intro_html" : [ `Explore how the suitability of Welsh land for growing ten crops (see
 the dropdown list) is predicted to change in the future according to
 whether <mark>low, medium or high Greenhouse Gas emission
