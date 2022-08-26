@@ -1,6 +1,7 @@
 'use strict';
 
-import food_data from '../data/food/food.js';
+import food_data from '../data/site_work_plans.js';
+//import food_data from '../data/food/food.js';
 import {descriptions, keywords, utils} from './swp_ui.js';
 import {get_transtext} from '../../../js/mf_i18n.js';
 
@@ -72,7 +73,7 @@ function add_histories_markers(_map, _histories, _info){
 	minZoom: 1,
 	maxZoom: 20,
 	pointToLayer: function(feature, latlng){
-	    return feature.properties["Role"].startsWith('P')? L.marker(latlng, {icon: foodIcon}):  L.marker(latlng, {icon: storeIcon});
+	    return feature.properties["Keywords (EN)"].includes('Community Growing')? L.marker(latlng, {icon: foodIcon}):  L.marker(latlng, {icon: storeIcon});
 	},
 	onEachFeature: function(feature, layer){
             /** a) On mouse over/out (hover) update the info box.
@@ -93,10 +94,8 @@ function add_histories_markers(_map, _histories, _info){
             });
 	    /* NOTE: overriding short popup for now. Immediately open the modal when clicking an icon*/
 	    var props = feature.properties;
-	    // image path is ID/picture[X]_scaled.jpg
 	    var base = props["ID"];
-	    var pics = props["Picture title"]? props["Picture title"][0] : undefined;
-	    /* create index by-base needed by onclick handlers */
+	    /* create index by "ID" needed by onclick handlers */
 	    window.GLOBALS.history_props[base] = feature;
 	}
     });

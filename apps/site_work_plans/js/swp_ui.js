@@ -21,7 +21,8 @@ var descriptions = {
 	var description = utils.get_translated_property(props,"Description");
 	var keywords = utils.get_translated_property(props,"Keywords").join(', ');
 	// var date = props["Date of Recording"];
-	var pics = props["Picture title"];
+	var pics = props["Photos"];
+	var pictitle = props["Picture title"];
 	var telephone = props["Telephone"];
 	var email = props["Email"];
 	var website = props["Website"];
@@ -43,9 +44,9 @@ var descriptions = {
 		    _carousel_html += `<div class="carousel-item">`;
 		}
 		_carousel_html += `
-                <img class="d-block w-100" src="data/food/pictures/${base}/${pics[i]}_scaled.jpg" alt="Slide ${i}">
+                <img class="d-block w-100" src="data/pictures/${base}/${pics[i]}_scaled.jpg" alt="Slide ${i}">
                     <div class="carousel-caption d-none d-md-block bg-dark mb-4">
-                      <h5>${pics[i]}</h5>
+                      <h5>${pictitle[i]}</h5>
                     </div>
                 </div>`;
 	    }
@@ -69,7 +70,7 @@ var descriptions = {
 	//onlt add "produce" section when keywords are defined
 	var _produce_html = "";
 	if (keywords.length > 0){
-	    _produce_html = `                    <h5 class="text-muted">${get_transtext("food_produce")}</h5>
+	    _produce_html = `                    <h5 class="text-muted">Roles</h5>
                     <hr>
                     <span class="font-italic">${keywords}</span>`;
 	}
@@ -189,7 +190,7 @@ var keywords = {
     createHTML: function( kw_set, enabled ){
 	var enabled = enabled || new Set();
 
-	var html=`<h5>${get_transtext("food_produce")}:</h5>`;
+	var html=`<h5>Roles:</h5>`;
 	for ( var k of kw_set){
 	    if (k === ""){
 		continue;
