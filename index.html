@@ -43,7 +43,25 @@
       <div class="tabs">
 	<ul class="nav nav-pills my-1 justify-content-around">
 	  <li class="nav-item">
-            <a class="nav-link active" id='tab-landuse' data-toggle="pill" href="#land_use">
+            <a class="nav-link active" id='tab-crops' data-toggle="pill" href="#crops">
+	      <span class="lang_en">Crops</span>
+	      <span class="lang_cy">Cnydau</span>
+	    </a>
+	  </li>
+	  <li class="nav-item">
+            <a class="nav-link" id='tab-site_work_plans' data-toggle="pill" href="#site_work_plans">
+	      <span class="lang_en">Site Work Plans</span>
+	      <span class="lang_cy">WIP</span>
+	    </a>
+	  </li>
+	  <li class="nav-item">
+            <a class="nav-link" id='tab-opportunity' data-toggle="pill" href="#opportunity_maps">
+	      <span class="lang_en">Opportunity Maps</span>
+	      <span class="lang_cy">Mapiau Cyfleon</span>
+	    </a>
+	  </li>
+	  <li class="nav-item">
+            <a class="nav-link" id='tab-landuse' data-toggle="pill" href="#land_use">
 	      <span class="lang_en">Land Use comparison</span>
 	      <span class="lang_cy">Cymhariaeth Defnydd Tir</span>
 	    </a>
@@ -60,34 +78,19 @@
 	      <span class="lang_cy">WIP</span>
 	    </a>
 	  </li>
-	  <li class="nav-item">
-            <a class="nav-link" id='tab-crops' data-toggle="pill" href="#crops">
-	      <span class="lang_en">Crops</span>
-	      <span class="lang_cy">Cnydau</span>
-	    </a>
-	  </li>
-	  <li class="nav-item">
-            <a class="nav-link" id='tab-cycleways' data-toggle="pill" href="#cycleways">
-	      <span class="lang_en">Cycleways</span>
-	      <span class="lang_cy">WIP</span>
-	    </a>
-	  </li>
-	  <li class="nav-item">
-            <a class="nav-link" id='tab-opportunity' data-toggle="pill" href="#opportunity_maps">
-	      <span class="lang_en">Opportunity Maps</span>
-	      <span class="lang_cy">Mapiau Cyfleon</span>
-	    </a>
-	  </li>
-	  <li class="nav-item">
-            <a class="nav-link" id='tab-site_work_plans' data-toggle="pill" href="#site_work_plans">
-	      <span class="lang_en">Site Work Plans</span>
-	      <span class="lang_cy">WIP</span>
-	    </a>
-	  </li>
 	</ul>
       </div>
 	<div class="tab-content">
-	  <div id="land_use" class="tab-pane active">
+	  <div id="crops" class="tab-pane active">
+	    <iframe src="CSCP/crops.html"></iframe>
+	  </div>
+	  <div id="site_work_plans" class="tab-pane fade">
+	    <iframe src="apps/site_work_plans/site_work_plans.html"></iframe>
+	  </div>
+	  <div id="opportunity_maps" class="tab-pane fade">
+	    <iframe src="apps/om/opportunity_maps_simple.html"></iframe>
+	  </div>	  
+	  <div id="land_use" class="tab-pane fade">
 	    <iframe src="apps/lu/lu.html"></iframe>
 	  </div>
 	  <div id="oral_histories" class="tab-pane fade">
@@ -95,18 +98,6 @@
 	  </div>
 	  <div id="boundary" class="tab-pane fade">
 	    <iframe src="boundary/boundary_sidebar.html"></iframe>
-	  </div>
-	  <div id="crops" class="tab-pane fade">
-	    <iframe src="CSCP/crops.html"></iframe>
-	  </div>
-	  <div id="cycleways" class="tab-pane fade">
-	    <iframe src="cycleways/cycleways.html"></iframe>
-	  </div>
-	  <div id="opportunity_maps" class="tab-pane fade">
-	    <iframe src="apps/om/opportunity_maps_simple.html"></iframe>
-	  </div>	  
-	  <div id="site_work_plans" class="tab-pane fade">
-	    <iframe src="apps/site_work_plans/site_work_plans.html"></iframe>
 	  </div>
 	</div>
     </div>
