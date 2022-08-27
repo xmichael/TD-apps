@@ -43,7 +43,7 @@ function add_info(_map){
 	this._div.innerHTML = props ?
 			       `<b>${utils.get_translated_property(props,"Name")}</b><br/>
       ${props["Role"]}<br/>
-      ${props["Address"]}` : get_transtext('food_click_on_food_icon');
+      ${props["Address"]}` : get_transtext('site_work_plans_click_on_icon');
     };
 
     return info.addTo(_map);
@@ -59,11 +59,19 @@ function add_histories_markers(_map, _histories, _info){
 
 
     var storeIcon = L.icon({
-	iconUrl: 'data/distributor.svg',
+	iconUrl: 'data/icons/distributor.svg',
 	iconSize: [28, 33]
     });
-    var foodIcon = L.icon({
-	iconUrl: 'data/producer.svg',
+    var growIcon = L.icon({
+	iconUrl: 'data/icons/grow.svg',
+	iconSize: [28, 33]
+    });
+    var socialIcon = L.icon({
+	iconUrl: 'data/icons/social_farming.svg',
+	iconSize: [28, 33]
+    });
+    var compostIcon = L.icon({
+	iconUrl: 'data/icons/compost.svg',
 	iconSize: [28, 33]
     });
 
@@ -72,7 +80,15 @@ function add_histories_markers(_map, _histories, _info){
 	minZoom: 1,
 	maxZoom: 20,
 	pointToLayer: function(feature, latlng){
-	    return feature.properties["Keywords (EN)"].includes('Community Growing')? L.marker(latlng, {icon: foodIcon}):  L.marker(latlng, {icon: storeIcon});
+	    var x = feature.properties["Keywords (EN)"]; 
+	    if (x.includes('Community Composting'))
+		return L.marker(latlng, {icon: compostIcon});
+	    if (x.includes('Social Farming'))
+		return L.marker(latlng, {icon: socialIcon});
+	    if (x.includes('Community Growing'))
+		return L.marker(latlng, {icon: growIcon});
+	    // dodgy points are displayed with a store icon
+	    return L.marker(latlng, {icon: storeIcon});
 	},
 	onEachFeature: function(feature, layer){
             /** a) On mouse over/out (hover) update the info box.
