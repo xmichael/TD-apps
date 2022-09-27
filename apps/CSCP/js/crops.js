@@ -2,7 +2,7 @@
 
 /* sidebar with crops list in two languages */
 import {add_sidebar, add_intro_modal, html_legend_alc2, html_legend_cscp} from './crops_ui.js';
-import {gettext} from '../../js/mf_i18n.js';
+import {gettext} from '../../../js/mf_i18n.js';
 import {croplist, croplist2select, croplist_create_path} from './croplist.js';
 
 /** global namespace */

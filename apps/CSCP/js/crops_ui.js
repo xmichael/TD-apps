@@ -1,4 +1,4 @@
-import {gettext, get_transtext} from '../../js/mf_i18n.js';
+import {gettext, get_transtext} from '../../../js/mf_i18n.js';
 import {croplist_html} from './croplist.js';
 
 //sidebar HTML template
