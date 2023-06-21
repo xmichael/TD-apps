@@ -44,7 +44,7 @@ var descriptions = {
 		    _carousel_html += `<div class="carousel-item">`;
 		}
 		_carousel_html += `
-                <img class="d-block w-100" src="data/pictures/${base}/${pics[i]}_scaled.jpg" alt="Slide ${i}">
+                <img class="d-block w-100" src="data/pictures/${base}/${pics[i]}" alt="Slide ${i}">
                     <div class="carousel-caption d-none d-md-block bg-dark mb-4">
                       <h5>${pictitle[i]}</h5>
                     </div>
@@ -67,7 +67,7 @@ var descriptions = {
                   </div> <!--carousel-->`;
 	}
 	
-	//onlt add "produce" section when keywords are defined
+	//only add "produce" section when keywords are defined
 	var _produce_html = "";
 	if (keywords.length > 0){
 	    _produce_html = `                    <h5 class="text-muted">Roles</h5>
