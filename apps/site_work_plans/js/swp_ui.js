@@ -32,8 +32,7 @@ var descriptions = {
 	/* create carousel section when there are pictures available */
 	var _carousel_html = "";
 	if (pics.length > 0){
-	    _carousel_html = `<h5 class="text-muted">${get_transtext("food_pictures")}</h5>
-                    <hr>
+	    _carousel_html = `
     <div id="carouselPictures" class="carousel" data-interval="false" data-ride="carousel">
               <div class="carousel-inner">`;
 	    for (var i=0; i<pics.length; i++){
@@ -109,7 +108,7 @@ var descriptions = {
       <div class="modal-dialog modal-lg mw-100 w-75" role="document">
         <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">${name}</h5>
+              <h5 class="modal-title">${name}</h5><span class="font-italic pl-5">${keywords}</span>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -118,9 +117,6 @@ var descriptions = {
               <div class="container-fluid">
                 <div class="row">
                   <div class="col-sm-6">
-                      ${_produce_html}
-                    <h5 class="pt-3 text-muted">${get_transtext("food_description")}</h5>
-                    <hr>
                       ${description}
                   </div>
                   <div class="col-sm-6">
