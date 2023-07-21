@@ -42,7 +42,6 @@ function add_info(_map){
     info.update = function (props) {
 	this._div.innerHTML = props ?
 			       `<b>${utils.get_translated_property(props,"Name")}</b><br/>
-      ${props["Role"]}<br/>
       ${props["Address"]}` : get_transtext('site_work_plans_click_on_icon');
     };
 

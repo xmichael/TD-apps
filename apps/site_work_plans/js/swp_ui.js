@@ -22,7 +22,6 @@ var descriptions = {
 	var keywords = utils.get_translated_property(props,"Keywords").join(', ');
 	// var date = props["Date of Recording"];
 	var pics = props["Photos"];
-	var pictitle = props["Picture title"];
 	var telephone = props["Telephone"];
 	var email = props["Email"];
 	var website = props["Website"];
@@ -44,9 +43,6 @@ var descriptions = {
 		}
 		_carousel_html += `
                 <img class="d-block w-100" src="data/pictures/${base}/${pics[i]}" alt="Slide ${i}">
-                    <div class="carousel-caption d-none d-md-block bg-dark mb-4">
-                      <h5>${pictitle[i]}</h5>
-                    </div>
                 </div>`;
 	    }
 	    
@@ -79,7 +75,7 @@ var descriptions = {
 	if (facebook.length > 0){
 	    _follow_html = `<h5 class="text-muted">${get_transtext("food_follow")}</h5>
                     <hr>
-                    <a href="${facebook}"><i class="fa fa-facebook-square fa-2x"></i></a>`;
+                    <a href="${facebook}" target="_blank"><i class="fa fa-facebook-square fa-2x"></i></a>`;
 	}
 
 
