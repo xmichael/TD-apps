@@ -30,7 +30,8 @@ var descriptions = {
 	
 	/* create carousel section when there are pictures available */
 	var _carousel_html = "";
-	if (pics.length > 0){
+	if ((pics.length > 0) && ( pics[0] != "")){
+	    console.log(pics);
 	    _carousel_html = `
     <div id="carouselPictures" class="carousel" data-interval="false" data-ride="carousel">
               <div class="carousel-inner">`;
@@ -117,7 +118,9 @@ var descriptions = {
                   </div>
                   <div class="col-sm-6">
                     ${_carousel_html}
+                    <hr>
                     ${_contact_html}
+                    <hr>
                     ${_follow_html}
                   </div>
                 </div>
