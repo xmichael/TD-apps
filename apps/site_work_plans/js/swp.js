@@ -158,8 +158,9 @@ $(document).ready(function() {
     var map = L.map('map', {
 	center: [52.6, -3.76],
 	zoom: 11,
-	minZoom: 9,
+	minZoom: 10,
 	maxZoom: 20,
+	wheelPxPerZoomLevel: 200,
 	fadeAnimation: false,
 	layers: [osm]
     });
