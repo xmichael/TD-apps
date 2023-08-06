@@ -43,23 +43,23 @@
       <div class="tabs">
 	<ul class="nav nav-pills my-1 justify-content-around">
 	  <li class="nav-item">
-            <a class="nav-link active" id='tab-crops' data-toggle="pill" href="#crops">
-	      <span class="lang_en">Crops</span>
-	      <span class="lang_cy">Cnydau</span>
-	    </a>
-	  </li>
-	  <li class="nav-item">
-            <a class="nav-link" id='tab-growing_sites' data-toggle="pill" href="#growing_sites">
+            <a class="nav-link active" id='tab-growing_sites' data-toggle="pill" href="#growing_sites">
 	      <span class="lang_en">Field Scale Trials</span>
 	      <span class="lang_cy">Field Scale Trials</span>
 	    </a>
 	  </li>
 	  <li class="nav-item">
-            <a class="nav-link" id='tab-opportunity' data-toggle="pill" href="#opportunity_maps">
-	      <span class="lang_en">Opportunity Maps</span>
-	      <span class="lang_cy">Mapiau Cyfleon</span>
+            <a class="nav-link" id='tab-crops' data-toggle="pill" href="#crops">
+	      <span class="lang_en">Crops</span>
+	      <span class="lang_cy">Cnydau</span>
 	    </a>
 	  </li>
+	  <!-- <li class="nav-item"> -->
+          <!--   <a class="nav-link" id='tab-opportunity' data-toggle="pill" href="#opportunity_maps"> -->
+	  <!--     <span class="lang_en">Opportunity Maps</span> -->
+	  <!--     <span class="lang_cy">Mapiau Cyfleon</span> -->
+	  <!--   </a> -->
+	  <!-- </li> -->
 	  <li class="nav-item">
             <a class="nav-link" id='tab-landuse' data-toggle="pill" href="#land_use">
 	      <span class="lang_en">Land Use comparison</span>
@@ -81,15 +81,15 @@
 	</ul>
       </div>
 	<div class="tab-content">
-	  <div id="growing_sites" class="tab-pane fade">
+	  <div id="growing_sites" class="tab-pane active">
 	    <iframe src="apps/growing_sites/growing_sites.html"></iframe>
 	  </div>
-	  <div id="crops" class="tab-pane active">
+	  <div id="crops" class="tab-pane fade">
 	    <iframe src="apps/CSCP/crops.html"></iframe>
 	  </div>
-	  <div id="opportunity_maps" class="tab-pane fade">
-	    <iframe src="apps/om/opportunity_maps_simple.html"></iframe>
-	  </div>	  
+	  <!-- <div id="opportunity_maps" class="tab-pane fade"> -->
+	  <!--   <iframe src="apps/om/opportunity_maps_simple.html"></iframe> -->
+	  <!-- </div>	   -->
 	  <div id="land_use" class="tab-pane fade">
 	    <iframe src="apps/lu/lu.html"></iframe>
 	  </div>
