@@ -110,7 +110,8 @@
 	  }
       }
       /* hide elements with class different than ?lang=?? */
-      var divs_en  = window.location.search=="?lang=cy"? document.querySelectorAll('.lang_en') : document.querySelectorAll('.lang_cy') ;
+      let params = new URLSearchParams(document.location.search);
+      var divs_en  = params.get("lang")==="cy"? document.querySelectorAll('.lang_en') : document.querySelectorAll('.lang_cy') ;
       for (const div of divs_en) {
 	  div.style.display = 'none';
       }

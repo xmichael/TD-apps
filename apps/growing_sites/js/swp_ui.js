@@ -2,7 +2,8 @@ import {get_transtext} from '../../../js/mf_i18n.js';
 
 var utils = {
     get_translated_property: function(prop, key){
-	if (window.location.search=="?lang=cy"){
+	let params = new URLSearchParams(document.location.search);
+	if (params.get("lang")==="cy"){
 	    return prop[`${key} (CY)`];
 	}
 	return prop[`${key} (EN)`];

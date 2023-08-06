@@ -4,7 +4,8 @@
 * -- s.a.: gettext for short text or get_transtext for paragraphs using js-object based dictonary
 */
 function flip_l10n(){
-    if (window.location.search=="?lang=cy"){
+    let params = new URLSearchParams(document.location.search);
+    if (params.get("lang")==="cy"){
 	$('.lang_cy').show();
 	$('.lang_en').hide();
     }
@@ -156,7 +157,8 @@ function get_transtext (prop){
 	console.log("!!!!No such translation: ",prop); 
 	return "";
     }
-    if (window.location.search=="?lang=cy"){
+    let params = new URLSearchParams(document.location.search);
+    if (params.get("lang")==="cy"){
 	return transtext[prop][1];
     }
     return transtext[prop][0];
@@ -169,8 +171,10 @@ function get_transtext (prop){
 */
 
 function gettext( text ){
+
+    let params = new URLSearchParams(document.location.search);
     
-    if (window.location.search=="?lang=cy"){
+    if (params.get("lang") === "cy"){
 	if (en2cy.hasOwnProperty(text)){
 	    return en2cy[text];
 	}
