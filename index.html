@@ -115,6 +115,14 @@
       for (const div of divs_en) {
 	  div.style.display = 'none';
       }
+
+      /* code that need to be executed last */
+      document.addEventListener("DOMContentLoaded", () => {
+      /* pre-select a tab using the e.g "index.html#growing_sites" at the end of URL */
+	  let selectedTab = window.location.hash;
+	  let tabElement = document.querySelector('.nav-link[href="' + selectedTab + '"]');
+	  tabElement.click();
+      });
     </script>
     <!-- jQuery first, then Popper/Bootstrap bundle (one file) -->
 <!--  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
