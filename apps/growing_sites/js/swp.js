@@ -218,7 +218,18 @@ $(document).ready(function() {
 	});
 
     /*********************/
-
+    // IF "categories" is specified in URL query string then enable only this checkbox
+    let category = new URLSearchParams(document.location.search).get("category");
+    let category_map = {
+	"community_growing" : "Community Growing",
+	"field_scale_trial" : "Field Scale Trial",
+	"csa_cluster": "CSA Cluster",
+	"community_composting": "Community Composting",
+	"perennial_green_manures": "Perennial Green Manures"
+    };
+    if ( category in category_map ){
+	document.getElementById(category_map[category]).click();
+    }
     // Fit to overlay bounds
     //map.fitBounds([[52.330180936, -3.36476263021], [52.885998209, -4.39698523643]]);
 
