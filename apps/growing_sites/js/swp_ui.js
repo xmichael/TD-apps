@@ -66,7 +66,7 @@ var descriptions = {
 	//only add "produce" section when keywords are defined
 	var _produce_html = "";
 	if (keywords.length > 0){
-	    _produce_html = `                    <h5 class="text-muted">Roles</h5>
+	    _produce_html = `                    <h5 class="text-muted">Category</h5>
                     <hr>
                     <span class="font-italic">${keywords}</span>`;
 	}
@@ -185,7 +185,7 @@ var keywords = {
     createHTML: function( kw_set, enabled ){
 	var enabled = enabled || new Set();
 
-	var html=`<h5>Roles:</h5>`;
+	var html=`<h5>Category:</h5>`;
 	for ( var k of kw_set){
 	    if (k === ""){
 		continue;
