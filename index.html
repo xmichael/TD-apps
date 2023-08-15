@@ -120,8 +120,10 @@
       document.addEventListener("DOMContentLoaded", () => {
       /* pre-select a tab using the e.g "index.html#growing_sites" at the end of URL */
 	  let selectedTab = window.location.hash;
-	  let tabElement = document.querySelector('.nav-link[href="' + selectedTab + '"]');
-	  tabElement.click();
+	  if (selectedTab){
+	      let tabElement = document.querySelector('.nav-link[href="' + selectedTab + '"]');
+	      tabElement.click();
+	  }
       });
     </script>
     <!-- jQuery first, then Popper/Bootstrap bundle (one file) -->
