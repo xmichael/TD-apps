@@ -48,7 +48,7 @@ var en2cy = {
 /* dictionary of snippets of text */
 var transtext = {
     "site_work_plans_intro_title":['Growing Sites','Growing Sites'],
-    "site_work_plans_intro_body":[`<p>This map shows the site work plans (click on icons for detail) for each Community Growing site that recieved some resourcing from Tyfu Dyfi.</p>`,
+    "site_work_plans_intro_body":[`<p>Tyfu Dyfi Growing Sites. This map shows the site work plans (click on icons for detail) for each site that received some resourcing from Tyfu Dyfi. Use the panel on the left to select categories of particular interest.</p>`,
 		  `<p></p>`],
     "site_work_plans_click_on_icon":['Click on a <b>site</b> icon','Cliciwch ar eicon bwyd neu siop'],
     "crops_intro_html" : [ `Explore how the suitability of Welsh land for growing ten crops (see
