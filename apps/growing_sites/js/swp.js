@@ -121,6 +121,15 @@ function add_histories_markers(_map, _histories, _info){
     //L.popup().setLatLng(e.latlng).setContent("test").openOn(_map)
 }
 
+/** Remove the sidebar */
+function remove_sidebar(){
+	// remove sidebar, resize bootstrap grid, resize leaflet by triggering resize event
+	document.getElementById("sidebar-box").remove();
+	document.getElementById("map-box").classList.remove('col-sm-10');
+	document.getElementById("map-box").classList.add('col-sm-12');
+	window.dispatchEvent(new Event('resize'));  
+}
+
 $(document).ready(function() {
 
     /** export Globals -- needed for inline onclick events and for debugging */
@@ -180,7 +189,6 @@ $(document).ready(function() {
 	spinner.hide();
     }, 1000);
 
-    add_intro_modal('description_modal');
     
     // console.log(food_data);
     var set = keywords.createSet(food_data,"Keywords");
@@ -227,8 +235,13 @@ $(document).ready(function() {
 	"community_composting": "Community Composting",
 	"perennial_green_manures": "Perennial Green Manures"
     };
-    if ( category in category_map ){
+    if ( category in category_map ){	
+	// pre-select category on sidebar
 	document.getElementById(category_map[category]).click();
+	//remove_sidebar();
+    }
+    else{ //if Nothing is preselected then display modal
+	add_intro_modal('description_modal');
     }
     // Fit to overlay bounds
     //map.fitBounds([[52.330180936, -3.36476263021], [52.885998209, -4.39698523643]]);
