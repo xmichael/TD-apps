@@ -162,7 +162,7 @@ $(document).ready(function() {
     CSCP_bind_all_inputs(map, select_crops);
 
 
-    /*********************/
+    /**********************/
     /****** LEGEND ********/
 
     var legend = L.control({
@@ -189,7 +189,12 @@ $(document).ready(function() {
     //switch legend when adding ALC2 overlay
 
     // disable ALC2 for now
-    /*
+    
+    overlays[`${gettext("Predictive ALC map")} v.2 <span class='text-info'>(${gettext("Contemporary")})</span>`] = ALC2;
+    L.control.layers({}, overlays, {
+        collapsed: false
+    }).addTo(map);
+
     map.on('overlayadd', function(l){
 	if (l.name.startsWith('Predictive') || l.name.startsWith('Map ALC')){
 	    $('#crops_legend').html(html_legend_alc2);
@@ -198,7 +203,7 @@ $(document).ready(function() {
     map.on('overlayremove', function(l){
 	    $('#crops_legend').html(html_legend_cscp);
     });
-   */
+   
 
 });
 
