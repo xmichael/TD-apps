@@ -244,9 +244,16 @@ $(document).ready(function() {
 	document.getElementById(category_map[category]).click();
 	//remove_sidebar();
     }
-    // category === "all" is used at the gateway index.html and produces a different intro screen without a sidebar
+    /** SPECIAL CATEGORIES */
+    // category === "all" is only used at the gateway index.html and produces a different intro screen WITHOUT a sidebar
     else if (category === "all"){
 	add_intro_modal('description_modal',get_transtext('gateway_intro_body'));
+	remove_sidebar();
+    }
+    // used to select csa_cluster with a different intro screnn and WITHOUT a sidebar
+    else if (category === "csa_only"){
+	document.getElementById("CSA Cluster").click();
+	add_intro_modal('description_modal',get_transtext('csa_only_intro_body'));
 	remove_sidebar();
     }
     // ONLY display modal IF no category is preselected
