@@ -234,7 +234,7 @@ $(document).ready(function() {
     let category = new URLSearchParams(document.location.search).get("category");
     let category_map = {
 	"community_growing" : "Community Growing",
-	"field_scale_trial" : "Field Scale Trial",
+	"field_scale_trials" : "Field Scale Trial",
 	"csa_cluster": "CSA Cluster",
 	"community_composting": "Community Composting",
 	"perennial_green_manures": "Perennial Green Manures"
@@ -247,6 +247,7 @@ $(document).ready(function() {
     /** SPECIAL CATEGORIES */
     // category === "all" is only used at the gateway index.html and produces a different intro screen WITHOUT a sidebar
     else if (category === "all"){
+	document.getElementById("Field Scale Trial").click();
 	add_intro_modal('description_modal',get_transtext('gateway_intro_body'));
 	remove_sidebar();
     }
