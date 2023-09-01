@@ -8,9 +8,13 @@ import {get_transtext} from '../../../js/mf_i18n.js';
 window.GLOBALS = {};
 /*********************/
 
-/* Show intro modal */
+/* Show intro modal
+   params:
+   _id : the id of the element for the modal
+   text: the actual html text
+ */
 
-function add_intro_modal(_id) {
+function add_intro_modal(_id, text) {
     var html = `
       <!-- modal-{sm,lg,xl} -->
       <div class="modal-dialog modal-lg" role="document">
@@ -22,7 +26,7 @@ function add_intro_modal(_id) {
               </button>
             </div>
             <div class="modal-body">
-               ${get_transtext('site_work_plans_intro_body')}
+               ${text}
             </div>
           </div>
        </div>
@@ -240,8 +244,14 @@ $(document).ready(function() {
 	document.getElementById(category_map[category]).click();
 	//remove_sidebar();
     }
-    else{ //if Nothing is preselected then display modal
-	add_intro_modal('description_modal');
+    // category === "all" is used at the gateway index.html and produces a different intro screen without a sidebar
+    else if (category === "all"){
+	add_intro_modal('description_modal',get_transtext('gateway_intro_body'));
+	remove_sidebar();
+    }
+    // ONLY display modal IF no category is preselected
+    else { 
+	add_intro_modal('description_modal',get_transtext('site_work_plans_intro_body'));
     }
     // Fit to overlay bounds
     //map.fitBounds([[52.330180936, -3.36476263021], [52.885998209, -4.39698523643]]);
