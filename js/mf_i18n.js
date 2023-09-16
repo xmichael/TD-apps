@@ -51,7 +51,7 @@ var transtext = {
     "gateway_intro_body":[`<p>Field Scale Trials.  This map shows the location (click on icon for details) for the six sites that received funding under Tyfu Dyfi to conduct field scale trials of novel crops.</p>`,
 		  `<p></p>`],
     "csa_only_intro_body":[`<p>Community Supported Agriculture.  This map shows the location of those growing sites that received funding under Tyfu Dyfi to increase production using agroecological practices and engage more with the local community. Click on individual icons for details of each site and what they offer.`,`<p></p>`],
-    "site_work_plans_intro_body":[`<p>Tyfu Dyfi Growing Sites. This map shows the site work plans (click on icons for detail) for each site that received some resourcing from Tyfu Dyfi. Use the panel on the left to select categories of particular interest.</p>`,
+    "site_work_plans_intro_body":[`<p>Tyfu Dyfi Growing Sites. This map provides information (click on icons for detail) on each site that received some resourcing from Tyfu Dyfi. Use the panel on the left to select categories of particular interest.</p>`,
 		  `<p></p>`],
     "site_work_plans_click_on_icon":['Click on a <b>site</b> icon','Cliciwch ar eicon bwyd neu siop'],
     "crops_intro_html" : [ `Explore how the suitability of Welsh land for growing most common
